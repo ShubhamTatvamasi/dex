@@ -1,0 +1,39 @@
+config:
+  issuer: https://dex.k8s.shubhamtatvamasi.com
+
+  storage:
+    type: memory
+
+  web:
+    http: 0.0.0.0:5556
+
+  oauth2:
+    skipApprovalScreen: true
+
+  enablePasswordDB: true
+
+  staticPasswords:
+    - email: "admin@example.com"
+      hash: "$2y$10$SCGWSS0JvcJYgmbKLltITOnWH.1rc2yHiJOcQgqpDphSZkRrlmoza"
+      username: "admin"
+      userID: "1"
+
+  staticClients:
+    - id: flux-web-ui
+      redirectURIs:
+        - "https://fluxcd.k8s.shubhamtatvamasi.com/oauth2/callback"
+      name: Flux Web UI
+      secret: "flux-dex-client-secret"
+
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: dex.k8s.shubhamtatvamasi.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: shubhamtatvamasi-tls
+      hosts:
+        - dex.k8s.shubhamtatvamasi.com
