@@ -12,3 +12,10 @@ helm upgrade -i dex --wait dex/dex \
   --create-namespace
 ```
 
+---
+
+Generate Hash password:
+```bash
+htpasswd -bnBC 10 "" yourpassword | tr -d ':\n' ; echo
+```
+
