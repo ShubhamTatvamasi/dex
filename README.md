@@ -22,7 +22,7 @@ htpasswd -bnBC 10 "" yourpassword | tr -d ':\n' ; echo
 ```
 
 Create ClusterRoleBinding for flux-web-admin:
-```
+```yaml
 kubectl apply -f - <<EOF
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
