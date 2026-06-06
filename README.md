@@ -1,5 +1,7 @@
 # dex
 
+https://artifacthub.io/packages/helm/dex/dex
+
 Add helm repo:
 ```bash
 helm repo add dex https://charts.dexidp.io
