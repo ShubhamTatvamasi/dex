@@ -21,7 +21,7 @@ config:
   staticClients:
     - id: flux-web-ui
       redirectURIs:
-        - "https://fluxcd.k8s.shubhamtatvamasi.com/oauth2/callback"
+        - "https://flux.k8s.shubhamtatvamasi.com/oauth2/callback"
       name: Flux Web UI
       secret: "flux-dex-client-secret"
 
